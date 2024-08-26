@@ -17,14 +17,14 @@
     padding: 3dvh; 
     border-radius: 1dvh;
     border: 1px solid black;
-    background-image: linear-gradient(45deg,#2f4680,#500ae4,#4d0bdb,#500ae4);
+    background-image: url(assets\background.jpg);
 }
 .text{
     height: 5dvh;
     width: 28dvh;
     border-radius: 5dvh;
     font-size: larger;
-    padding: 2dvh 2dvh 2dvh 3dvh;
+    padding: 1dvh;
     outline: none;
     color: #626262;
     background: #d6fcf7;
@@ -41,6 +41,7 @@
 }
 .searchbar{
     display: flex;
+    align-items: center;
     gap: 2dvh;
 }
 .search{
@@ -54,6 +55,9 @@ body{
 .sun{
     height: 26dvh;
     width: 26dvh;
+    border-radius: 1dvh;
+    padding: 7dvh;
+    filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
 }
 .result{
     text-align: center;
@@ -61,6 +65,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 2dvh;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
 .deg{
     font-size: 10dvh;
@@ -74,6 +79,11 @@ body{
     width: 40dvh;
     display: flex;
     justify-content: space-between;
+    padding: 2dvh;
+    border-radius: 1dvh;
+    backdrop-filter: blur(10px);
+    border: 1px solid #d6fcf7;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
 .humid{
     display: flex;
@@ -100,4 +110,15 @@ body{
 .climate{
     font-size: 3dvh;
     color: rgb(231, 224, 224);
+}
+.location{
+    height: 3dvh;
+    width: 3dvh;
+}
+.wrap{
+    display: flex;
+    align-items: center;
+    border-radius: 5dvh;
+    background: #d6fcf7;
+    padding: 1dvh 1dvh 1dvh 1dvh;
 }

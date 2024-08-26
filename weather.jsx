@@ -8,6 +8,7 @@ import cloud from "./assets/clouds.png"
 import drizzle from "./assets/cloudy.png"
 import rain from "./assets/rainy-day.png"
 import snow from "./assets/snow.png"
+import location from "./assets/placeholder.png"
 function Weather(){
     const [weather,setWeather]=useState(null)
     const[city,setCity]=useState("Bangalore")
@@ -44,15 +45,19 @@ function Weather(){
         <div className="container">
             <div className="app">
                 <div className="searchbar">
-                    <input type="text" className="text" placeholder="Search" onChange={(e)=>setCity(e.target.value)}/><button className="icon" onClick={()=>getData()}><img src={photo} className="search"/></button>
+                    <div className="wrap">
+                    <img src={location} className="location"/>
+                    <input type="text" className="text" placeholder="Search" onChange={(e)=>setCity(e.target.value)}/>
+                    </div>
+                    <button className="icon" onClick={()=>getData()}><img src={photo} className="search"/></button>
                 </div>
                 {weather != null? (
                     <>
                     <img src={icons[weather.weather[0].icon] || sun} className="sun"/>
                     <div className="result">
-                        <p className="climate">{weather.weather[0].description}</p>
-                        <p className="deg">{parseFloat(weather.main.temp-273.15).toFixed(1)}&deg;C</p>
-                        <p className="city">{weather.name}</p>
+                        <p className="climate"><strong>{weather.weather[0].description}</strong></p>
+                        <p className="deg"><strong>{parseFloat(weather.main.temp-273.15).toFixed(1)}&deg;C</strong></p>
+                        <p className="city"><strong>{weather.name}</strong></p>
                     </div>
                     <div className="foot">
                         <div className="humid">
